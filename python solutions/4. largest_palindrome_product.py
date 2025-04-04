@@ -2,6 +2,7 @@ def largest_palindrome_product(rangemax: int = 999) -> int:
     
     # https://projecteuler.net/problem=4
     # Solved by Miguecetin
+    # Date: 03/04/25
     
     largest = 0
     

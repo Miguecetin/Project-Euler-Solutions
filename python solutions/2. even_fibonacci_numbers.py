@@ -2,6 +2,7 @@ def even_fibonacci_numbers(rangemax: int = 4000000) -> int:
     
     # https://projecteuler.net/problem=2
     # Solved by Miguecetin
+    # Date: 03/04/25
 
     counter, na, nb = 0, 0, 1 # na = current fibonacci number. nb = next fibonacci number in the sequendce
     
