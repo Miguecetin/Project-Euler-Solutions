@@ -1,4 +1,4 @@
-import math
+from math import lcm
 
 def smallest_multiple(rangemax: int = 20) -> int:
     
@@ -8,10 +8,9 @@ def smallest_multiple(rangemax: int = 20) -> int:
     
     # Find the lcm (least common multiple) for numbers [1, n=20] with math.lcm()
     
-    
     numbers = [i for i in range(2, rangemax + 1)]
         
-    return math.lcm(*numbers)
+    return lcm(*numbers)
     
 if __name__ == "__main__":
     print(smallest_multiple())
