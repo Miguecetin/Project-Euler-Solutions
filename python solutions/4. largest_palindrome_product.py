@@ -1,12 +1,12 @@
-def largest_palindrome_product() -> int:
+def largest_palindrome_product(rangemax: int = 999) -> int:
     
     # https://projecteuler.net/problem=4
     # Solved by Miguecetin
     
     largest = 0
     
-    for i in range(1, 1000):
-        for j in range(1, 1000):
+    for i in range(1, rangemax + 1):
+        for j in range(1, rangemax + 1):
             num = i * j
             if is_palindrome(num): # no need to add "and num > largest" since it will always be true (i and j never decrease)
                 largest = num

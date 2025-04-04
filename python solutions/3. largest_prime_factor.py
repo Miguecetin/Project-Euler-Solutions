@@ -1,4 +1,4 @@
-def largest_prime_factor(number: int) -> int:
+def largest_prime_factor(number: int = 600851475143) -> int:
     
     # https://projecteuler.net/problem=3
     # Solved by Miguecetin
@@ -14,4 +14,4 @@ def largest_prime_factor(number: int) -> int:
     return max(factors)
 
 if __name__ == "__main__":
-    print(largest_prime_factor(600851475143))
+    print(largest_prime_factor())

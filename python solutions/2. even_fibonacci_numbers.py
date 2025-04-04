@@ -1,11 +1,11 @@
-def even_fibonacci_numbers() -> int:
+def even_fibonacci_numbers(rangemax: int = 4000000) -> int:
     
     # https://projecteuler.net/problem=2
     # Solved by Miguecetin
 
     counter, na, nb = 0, 0, 1 # na = current fibonacci number. nb = next fibonacci number in the sequendce
     
-    while na < 4000000:
+    while na < rangemax:
         fib_n = na + nb
         na, nb = nb, fib_n
         
