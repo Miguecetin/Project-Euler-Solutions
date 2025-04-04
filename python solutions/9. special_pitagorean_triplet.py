@@ -8,7 +8,7 @@
 
 def pitagorean_triplet(sum: int = 1000) -> int:
     
-    # Implementation without clever math, just brute force.
+    # Implementation by brute force.
                 
     for a in range(1, sum + 1):
         for b in range(1, sum + 1):
