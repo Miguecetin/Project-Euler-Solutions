@@ -1,9 +1,12 @@
-
-def nth_prime(nth_prime: int = 10001) -> int:
-    
-    # https://projecteuler.net/problem=7
+    #
     # Solved by Miguecetin
     # Date: 05/04/25
+    #
+    # https://projecteuler.net/problem=7
+    # https://github.com/Miguecetin/Project-Euler-Solutions
+    #
+
+def nth_prime(nth_prime: int = 10001) -> int:
     
     # Look for the n th prime number 
        

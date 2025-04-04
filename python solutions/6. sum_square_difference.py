@@ -1,8 +1,12 @@
-def sum_square_difference(rangemax: int = 100) -> int:
-    
-    # https://projecteuler.net/problem=6
+    #
     # Solved by Miguecetin
     # Date: 04/04/25
+    #
+    # https://projecteuler.net/problem=6
+    # https://github.com/Miguecetin/Project-Euler-Solutions
+    #
+
+def sum_square_difference(rangemax: int = 100) -> int:
     
     sum_squares = 0
     sum = 0

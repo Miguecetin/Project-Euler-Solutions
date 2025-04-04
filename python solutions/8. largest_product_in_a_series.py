@@ -1,9 +1,12 @@
-
-def largest_product(sequence: str, adjacent_digits: int = 13) -> int:
-    
-    # https://projecteuler.net/problem=8
+    #
     # Solved by Miguecetin
     # Date: 05/04/25
+    #
+    # https://projecteuler.net/problem=8
+    # https://github.com/Miguecetin/Project-Euler-Solutions
+    #
+
+def largest_product(sequence: str, adjacent_digits: int = 13) -> int:
     
     # adjacent_digits is the amount of adjacent digits inside the sequence
     

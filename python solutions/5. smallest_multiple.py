@@ -1,10 +1,14 @@
+    #
+    # Solved by Miguecetin
+    # Date: 04/04/25
+    #
+    # https://projecteuler.net/problem=5
+    # https://github.com/Miguecetin/Project-Euler-Solutions
+    #
+    
 from math import lcm
 
 def smallest_multiple(rangemax: int = 20) -> int:
-    
-    # https://projecteuler.net/problem=5
-    # Solved by Miguecetin
-    # Date: 04/04/25
     
     # Find the lcm (least common multiple) for numbers [1, n=20] with math.lcm()
         

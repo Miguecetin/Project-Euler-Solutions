@@ -1,8 +1,12 @@
-def largest_prime_factor(number: int = 600851475143) -> int:
-    
-    # https://projecteuler.net/problem=3
+    #
     # Solved by Miguecetin
     # Date: 03/04/25
+    #
+    # https://projecteuler.net/problem=3
+    # https://github.com/Miguecetin/Project-Euler-Solutions
+    #
+
+def largest_prime_factor(number: int = 600851475143) -> int:
     
     factors = []
     

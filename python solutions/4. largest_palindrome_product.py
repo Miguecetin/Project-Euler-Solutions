@@ -1,8 +1,12 @@
-def largest_palindrome_product(rangemax: int = 999) -> int:
-    
-    # https://projecteuler.net/problem=4
+    #
     # Solved by Miguecetin
     # Date: 03/04/25
+    #
+    # https://projecteuler.net/problem=4
+    # https://github.com/Miguecetin/Project-Euler-Solutions
+    #
+
+def largest_palindrome_product(rangemax: int = 999) -> int:
     
     largest = 0
     
