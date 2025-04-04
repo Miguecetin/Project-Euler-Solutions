@@ -13,7 +13,7 @@ def pitagorean_triplet(sum: int = 1000) -> int:
     for a in range(1, sum + 1):
         for b in range(1, sum + 1):
             c = sum - a - b
-            if (a ** 2 + b ** 2 == c ** 2) and (a + b + c == sum):
+            if (a ** 2 + b ** 2 == c ** 2):
                 # Solution also works if we do `a, b = b, a` (the order of a and b don't matter)
                 return a * b * c
             
