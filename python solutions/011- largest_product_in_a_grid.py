@@ -1,6 +1,6 @@
     #
     # Solved by Miguecetin
-    # Date: 06/04/25
+    # Date: 05/04/25
     #
     # https://projecteuler.net/problem=11
     # https://github.com/Miguecetin/Project-Euler-Solutions
@@ -8,14 +8,13 @@
 
 from math import sqrt
 
+    # This implementation assumes you give the matrix as just a string of numbers separated by spaces.
+
 def largest_product_in_grid(sequence_str: str, numbers: int = 4) -> int: # numbers is the amount of adjacent numbers (in this case 4)
     # Must be a squared matrix
     
     sequence_list = sequence_str.split(" ")
     dimensions = int(sqrt(len(sequence_list))) # The dimensions are 20x20 (squared matrix)
-    
-    # Create a 20x20 matrix with a list of tuples and access the coordinates of the wanted numbers with matrix[y][x]
-    # There will be 20 tuples with 20 numbers each [0,19], acting as the x coordinate for the matrix 
     
     matrix = create_matrix(sequence_list, dimensions)
     
@@ -50,6 +49,9 @@ def search_largest(matrix: list, dimensions: int, numbers: int) -> int:
 
 
 def create_matrix(sequence_list: list, dimensions: int) -> list:
+
+    # Create a 20x20 matrix with a list of tuples and access the coordinates of the wanted numbers with matrix[y][x]
+    # There will be 20 tuples with 20 numbers each [0,19], acting as the x coordinate for the matrix 
 
     matrix = []
     
