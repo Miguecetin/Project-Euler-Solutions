@@ -1,6 +1,6 @@
     #
     # Solved by Miguecetin
-    # Date: 05/04/25
+    # Date: 06/04/25
     #
     # https://projecteuler.net/problem=11
     # https://github.com/Miguecetin/Project-Euler-Solutions
@@ -8,7 +8,7 @@
 
 from math import sqrt
 
-def largest_product_in_grid(sequence_str: str) -> int:
+def largest_product_in_grid(sequence_str: str, numbers: int = 4) -> int: # numbers is the amount of adjacent numbers (in this case 4)
     # Must be a squared matrix
     
     sequence_list = sequence_str.split(" ")
@@ -18,80 +18,37 @@ def largest_product_in_grid(sequence_str: str) -> int:
     # There will be 20 tuples with 20 numbers each [0,19], acting as the x coordinate for the matrix 
     
     matrix = create_matrix(sequence_list, dimensions)
-
-    # Search for the largest product in the matrix
-
-    largest_horizontal = find_horizontal(matrix, dimensions)
-    largest_vertical = find_vertical(matrix, dimensions)
-    largest_diagonal_right = find_diagonal_right(matrix, dimensions)
-    largest_diagonal_left = find_diagonal_left(matrix, dimensions)
     
-    return max(largest_horizontal, largest_vertical, largest_diagonal_right, largest_diagonal_left)
+    return search_largest(matrix, dimensions, numbers)
     
-def find_horizontal(matrix: list, dimensions: int) -> int:
+def search_largest(matrix: list, dimensions: int, numbers: int) -> int:
     
-    largest_product = -1
+    largest = 0
     
-    for i in range(dimensions): # y coordinate. Goes from 0 to 19 (rows)
+    for case in range(4):
         
-        for j in range(i, dimensions - 3): # x coordinate. Goes from 0 to 16 (columns)
+        for i in range(dimensions - numbers + 1):
             
-            product = matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * matrix[i][j + 3]
-            
-            if product > largest_product:
-                print(f"{product} > {largest_product}")
-                largest_product = product
+            for j in range(dimensions - numbers + 1):
                 
-    return largest_product
+                match case:
+                    case 0: # Horizontal case
+                        product = matrix[i][j] * matrix[i][j + 1] * matrix[i][j + 2] * matrix[i][j + 3]
+                    case 1: # Vertical case
+                        product = matrix[i][j] * matrix[i + 1][j] * matrix[i + 2][j] * matrix[i + 3][j]
+                    case 2: # Diagonal from bottom left to top right case
+                        product = matrix[i][j] * matrix[i + 1][j + 1] * matrix[i + 2][j + 2] * matrix[i + 3][j + 3]
+                    case 3: # Diagonal from top left to bottom right case
+                        product = matrix[i][j] * matrix[i + 1][j - 1] * matrix[i + 2][j - 2] * matrix[i + 3][j - 3]
+                    
+                if product > largest:
+                    largest = product
 
-def find_vertical(matrix: list, dimensions: int) -> int:
-    
-    largest_product = -1
-    
-    for i in range(dimensions - 3): # y coordinate. Goes from 0 to 16 (rows)
-        
-        for j in range(i, dimensions): # x coordinate. Goes from 0 to 19 (columns)
-            
-            product = matrix[i][j] * matrix[i + 1][j] * matrix[i + 2][j] * matrix[i + 3][j]
-            
-            if product > largest_product:
-                print(f"{product} > {largest_product}")
-                largest_product = product
-                
-    return largest_product
+        case += 1
 
-def find_diagonal_right(matrix: list, dimensions: int) -> int: # Goes from top left to bottom right
-    
-    largest_product = -1
-    
-    for i in range(dimensions): # y coordinate. Goes from 0 to 19 (rows)
-        
-        for j in range(i, dimensions - 3): # x coordinate. Goes from 0 to 16 (columns)
-            
-            product = matrix[i][j] * matrix[i - 1][j + 1] * matrix[i - 2][j + 2] * matrix[i - 3][j + 3]
-            
-            if product > largest_product:
-                print(f"{product} > {largest_product}")
-                largest_product = product
-                
-    return largest_product
+    return largest
 
-def find_diagonal_left(matrix: list, dimensions: int) -> int: # Goes from bottom left to top right
-    
-    largest_product = -1
-    
-    for i in range(dimensions): # y coordinate. Goes from 0 to 16 (rows)
-        
-        for j in range(i, dimensions - 3): # x coordinate. Goes from 0 to 19 (columns)
-            
-            product = matrix[i][j] * matrix[i + 1][j + 1] * matrix[i + 2][j + 2] * matrix[i + 3][j + 3]
-            
-            if product > largest_product:
-                print(f"{product} > {largest_product}")
-                largest_product = product
 
-    return largest_product
-    
 def create_matrix(sequence_list: list, dimensions: int) -> list:
 
     matrix = []
