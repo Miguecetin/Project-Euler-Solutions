@@ -6,7 +6,7 @@
     # https://github.com/Miguecetin/Project-Euler-Solutions
     #
 
-def large_sum(big_numbers: list, n_digits: int = 10) -> int:
+def large_sum(big_numbers: list, n_digits: int = 10) -> str:
     
     large_sum = str(sum(big_numbers))
     
