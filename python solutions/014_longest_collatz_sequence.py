@@ -21,7 +21,7 @@ def longest_collatz_sequence(rangemax: int = 1000000) -> int:
             
             if (i % 2 == 0): # Case for even numbers
                 i = i // 2
-            else:
+            else: # Case for odd numbers
                 i = i * 3 + 1
             
             sequences[starter] += 1
