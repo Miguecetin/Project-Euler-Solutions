@@ -10,11 +10,6 @@ def large_sum(big_numbers: list, n_digits: int = 10) -> int:
     
     large_sum = str(sum(big_numbers))
     
-    # result = ""
-    
-    # for i in range(n_digits):
-    #     result = result + large_sum[i]
-    
     return "".join(large_sum[i] for i in range(n_digits)) # Implementation by comprehension
 
 if __name__ == "__main__":
