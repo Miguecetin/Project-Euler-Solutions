@@ -31,8 +31,8 @@ def longest_collatz_sequence(rangemax: int = 1000000) -> int:
     
     for i, j in sequences.items():
         if j > longest_sequence:
-            longest_sequence = j
             longest_starter = i
+            longest_sequence = j
 
     return longest_starter
         
