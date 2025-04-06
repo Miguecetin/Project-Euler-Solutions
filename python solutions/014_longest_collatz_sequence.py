@@ -8,14 +8,14 @@
 
 from collections import defaultdict
 
-def longest_collatz_sequence(rangemax: int = 1000000) -> dict:
+def longest_collatz_sequence(rangemax: int = 1000000) -> int:
     
-    sequences = defaultdict(list)
+    sequences = defaultdict(int)
     
     for starter in range(1, rangemax):
         
         i = starter
-        sequences[starter].append(starter)
+        sequences[starter] += 1
 
         while (i > 1):
             
@@ -24,18 +24,18 @@ def longest_collatz_sequence(rangemax: int = 1000000) -> dict:
             else:
                 i = i * 3 + 1
             
-            sequences[starter].append(i)
-        
-    return sequences
+            sequences[starter] += 1
+
+    longest_sequence = 1 # Amount of numbers in the sequence
+    longest_starter = 1 # Starter number for the sequence
+    
+    for i, j in sequences.items():
+        if j > longest_sequence:
+            longest_sequence = j
+            longest_starter = i
+
+    return longest_starter
         
 if __name__ == "__main__":
     
-    longest_sequence = longest_collatz_sequence(1000000)
-    
-    longest = 1
-    for i, j in longest_sequence.items():
-        # print(i, j)
-        if len(j) >= longest:
-            longest = i
-
-    print(f"Longest: {longest} // Total length: {len(longest_sequence[longest])} // Sequence: {longest_sequence[longest]}")
+    print(longest_collatz_sequence())
