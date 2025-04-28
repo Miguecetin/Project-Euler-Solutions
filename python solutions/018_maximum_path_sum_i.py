@@ -6,24 +6,22 @@
     # https://github.com/Miguecetin/Project-Euler-Solutions
     #
     
+    # We need to use Dynamic Programming. This page helped a lot: https://www.geeksforgeeks.org/dynamic-programming/
+    
 def maximum_path_sum(triangle: list) -> int:
-    current_row = len(triangle) - 2 # Start on the penultimate row and go up (the last row does not have children)
     
-    while current_row >= 0: # While we are not at the top, keep iterating 
+    tri_length = len(triangle)
     
-        current_col = 0
-        while current_col < len(triangle[current_row]): # Iterate over every number (column) in the row
-        
-            left_child = triangle[current_row + 1][current_col]
-            right_child = triangle[current_row + 1][current_col + 1]
-        
-            triangle[current_row][current_col] += max(left_child, right_child) # Update the number with the sum of itself + the max of its children
-            current_col += 1 # Go to the next column
-        
-        current_row -= 1 # Go to the next row
+    storage = [[0] * tri_length for _ in range(tri_length)]
 
-    # The total max will be in the top
-    return triangle[0][0]
+    for i in range(tri_length):
+        storage[tri_length - 1][i] = triangle[tri_length - 1][i]
+        
+        for i in range(tri_length - 2, -1, -1):
+            for j in range(len(triangle[i])):
+                storage[i][j] = triangle[i][j] + max(storage[i + 1][j], storage[i + 1][j + 1])
+                
+    return storage[0][0]
 
 if __name__ == "__main__":
     
