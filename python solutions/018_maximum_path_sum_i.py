@@ -10,14 +10,12 @@
     
 def maximum_path_sum(triangle: list) -> int:
     
-    tri_length = len(triangle)
-    
-    storage = [[0] * tri_length for _ in range(tri_length)]
+    storage = [[0] * len(triangle) for _ in range(len(triangle))]
 
-    for i in range(tri_length):
-        storage[tri_length - 1][i] = triangle[tri_length - 1][i]
+    for i in range(len(triangle)):
+        storage[len(triangle) - 1][i] = triangle[len(triangle) - 1][i]
         
-        for i in range(tri_length - 2, -1, -1):
+        for i in range(len(triangle) - 2, -1, -1):
             for j in range(len(triangle[i])):
                 storage[i][j] = triangle[i][j] + max(storage[i + 1][j], storage[i + 1][j + 1])
                 
