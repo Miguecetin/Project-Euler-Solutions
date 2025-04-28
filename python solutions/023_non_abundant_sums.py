@@ -37,7 +37,7 @@ def get_possible_sums(numbers: list) -> set:
     
     return sums
 
-    # Alternative via comprehension
+    # Alternative solution via comprehension
     # return set(number1 + number2 for number1 in numbers for number2 in numbers)
     
 if __name__ == "__main__":
