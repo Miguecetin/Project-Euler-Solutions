@@ -22,10 +22,15 @@ def is_prime(num: int) -> bool:
     
     result = True
     
+    if num < 2:
+        result = False
+        
     for i in range(2, int(math.sqrt(num)) + 1):
+        
         if num % i == 0:
             result = False
-    
+            break
+            
     return result
 
 if __name__ == "__main__":
