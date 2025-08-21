@@ -13,7 +13,7 @@ def largest_palindrome_product(rangemax: int = 999) -> int:
     for i in range(1, rangemax + 1):
         for j in range(1, rangemax + 1):
             num = i * j
-            if is_palindrome(num): # no need to add "and num > largest" since it will always be true (i and j never decrease)
+            if is_palindrome(num) and num > largest:
                 largest = num
     
     return largest
