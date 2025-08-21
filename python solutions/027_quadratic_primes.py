@@ -2,7 +2,7 @@
     # Solved by Miguecetin
     # Date: 22/08/25
     #
-    # https://projecteuler.net/problem=26
+    # https://projecteuler.net/problem=27
     # https://github.com/Miguecetin/Project-Euler-Solutions
     #
     
