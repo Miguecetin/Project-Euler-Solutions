@@ -24,7 +24,6 @@ def is_prime(num: int) -> bool:
     
     if num < 2:
         result = False
-     
     else:   
         for i in range(2, int(math.sqrt(num)) + 1):
             
