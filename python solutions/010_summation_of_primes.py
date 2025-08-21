@@ -24,23 +24,14 @@ def is_prime(num: int) -> bool:
     
     if num < 2:
         result = False
-<<<<<<< HEAD
+
     else:   
         for i in range(2, int(math.sqrt(num)) + 1):
             
             if num % i == 0:
                 result = False
                 break
-                
-=======
-        
-    for i in range(2, int(math.sqrt(num)) + 1):
-        
-        if num % i == 0:
-            result = False
-            break
-            
->>>>>>> 23a705473876c718e73aac5b42644aaae35d26b4
+
     return result
 
 if __name__ == "__main__":
